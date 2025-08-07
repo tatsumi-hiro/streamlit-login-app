@@ -191,13 +191,6 @@ def inquiry():
                 smtp.send_message(msg)
                 smtp.quit()  # smtpセッションを切る
 
-                # Googleの場合
-                # app_pasword= 'gcau lawd uisw viwl'
-                # smtp = smtplib.SMTP("smtp.gmail.com", 587)
-                # smtp.starttls()
-                # smtp.login("dbfummaster@gmail.com", app_pasword)
-                # smtp.send_message(msg)
-                # smtp.quit() 
 
                 # 後処理
                 st.markdown("<span style='color:blue;'>送信ありがとうございました。</span>", unsafe_allow_html=True) 
