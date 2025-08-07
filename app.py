@@ -1,13 +1,4 @@
 """
-お問い合わせ機能追加、メール送信をmailhogで確認 @app02.py
-<ブログ記事名>
-「【Streamlit v1.46.1】お問い合わせ機能の追加とMailHogで受信確認」
--------------------------
-(1)このapp.pyは上のapp02.pyの拡張版です。SQLite3なしでも
- st.session_state[]で保持、一応できた。signup後のご登録ありがとうメールの送信も追加!
- ここからさらに、SQLite3と連携させる（テーブルのリレーションなし、usersのみ）
- <ブログ記事名>
-
 
 """
 
@@ -195,8 +186,6 @@ def inquiry():
                 # 後処理
                 st.markdown("<span style='color:blue;'>送信ありがとうございました。</span>", unsafe_allow_html=True) 
 
-#　
-
 
 # サイドバーの実装
 with st.sidebar:
@@ -215,24 +204,13 @@ with st.sidebar:
                 st.rerun()
             else:
                 st.markdown("<span style='color:red;'>" + f"{username}さん、ログイン失敗" + "</span>", unsafe_allow_html=True) 
-            # for user in dict_data:
-            #     if user.get("username") == username and user.get("password") == password:
-            #         st.session_state["page"] = "dashboard"
-            #         st.session_state["mypage"] = 'Home'
-            #         st.session_state["login_user"] = username
-                    # ↓Streamlitのv1.26.0以降でst.experimental_rerun()はst.rerun()に置き換えられました。
-                    # st.rerun()  
-                    # break
-            # st.markdown("<span style='color:red;'>" + f"{username}さん、ログイン失敗" + "</span>", unsafe_allow_html=True) 
+
         st.divider()
         if st.button('新規登録はこちらから'):
             st.session_state["page"] = "signup"
             st.rerun()
 
     elif st.session_state["page"]== "dashboard":
-        # st.write("ログインに成功しました。<br>ようこそ!!")  # NG
-        # st.markdown("ログインに成功しました。  \nようこそ!!")  # OK ※半角スペース２個+\nで改行になる
-        # st.markdown("ログインに成功しました。<br>ようこそ!!")  # NG
         st.write("ログインに成功しました。")
         st.write(f"{st.session_state['login_user']}さん、ようこそ")
 
@@ -261,10 +239,6 @@ if st.session_state["page"] == "dashboard":
     elif st.session_state["mypage"] == "お問い合わせ":
         inquiry()
 
-    # # ログアウトボタン
-    # if st.button('logout'):
-    #     st.session_state["page"] = 'login'
-    #     st.rerun()  # 再読込
 
     
 
