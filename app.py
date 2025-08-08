@@ -114,7 +114,7 @@ def Registor():
                 if result:
                     st.session_state["page"] = "login"
                     st.markdown("<span style='color:blue;'>ご登録ありがとうございました。</span>", unsafe_allow_html=True) 
-                    signup_mail(username, email)
+                    # signup_mail(username, email)
                     st.rerun()
                 else:
                     st.markdown("<span style='color:red;'>申し訳ありませんが、再度ご登録をお願いします。</span>", unsafe_allow_html=True) 
