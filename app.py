@@ -83,9 +83,9 @@ def signup_mail(username, email):
     msg.attach(MIMEText(body, "plain"))  # MIMEオブジェクトを生成
 
     # MailHogのSMTPサーバーに送信
-    smtp = smtplib.SMTP("localhost", 1026)
-    smtp.send_message(msg)
-    smtp.quit()  # smtpセッションを切る
+    # smtp = smtplib.SMTP("localhost", 1026)
+    # smtp.send_message(msg)
+    # smtp.quit()  # smtpセッションを切る
 
     
 # 画面遷移先
@@ -178,9 +178,9 @@ def inquiry():
                 msg.attach(MIMEText(body, "plain"))  # MIMEオブジェクトを生成
 
                 # MailHogのSMTPサーバーに送信
-                smtp = smtplib.SMTP("localhost", 1026)
-                smtp.send_message(msg)
-                smtp.quit()  # smtpセッションを切る
+                # smtp = smtplib.SMTP("localhost", 1026)
+                # smtp.send_message(msg)
+                # smtp.quit()  # smtpセッションを切る
 
 
                 # 後処理
